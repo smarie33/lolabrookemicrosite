@@ -1,0 +1,933 @@
+$defaultdd: 5px 5px 5px rgba(0, 0, 0, 0.4);
+$mobile: 768px;
+
+* {
+ margin: 0px;
+ padding: 0px;
+}
+
+body{
+  background: #a59fad url(images/BGpattern.jpg) repeat center top;
+}
+
+section{
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+}
+
+img{
+  align-self:flex-start;
+}
+
+.rowscontainer{
+  display: flex;
+  flex-direction: row;
+  &>div{
+    width: 50%;
+  }
+}
+
+.rowscontainerthree{
+  display: flex;
+  flex-direction: row;
+  &>div{
+    width: 33%;
+  }
+}
+
+#cover{
+  margin-top: 5%;
+  #albumimage{
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    img{
+      width: 39.65%;
+      filter: drop-shadow($defaultdd);
+      margin-top: 41%;
+      margin-left: 35%;
+      transform: rotate(5deg);
+      @media (max-width: $mobile) {
+        width: 78%;
+        margin-top: 85%;
+      }
+    }
+  }
+  #bookintheback{
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    img{
+      width: 71.35%;
+      filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        width: 143%;
+        margin-left: -8%;
+      }
+    }
+  }
+}
+
+#songlist{
+  position: relative;
+  #songlistpaper{
+    position: absolute;
+    z-index: 0;
+    width: 45%;
+    height: 100%;
+    margin-left: 27.5%;
+    display: flex;
+    align-content: center;
+    align-content: flex-end;
+    @media (max-width: $mobile) {
+      position: relative;
+      margin-left: auto;
+      width: 98%;
+    }
+    img{
+      width:100%;
+      height: auto;
+      padding-top: 47.5%;
+      filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        padding-top: 7.5%;
+        margin-left: 1%;
+      }
+    }
+  }
+  #lolas{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
+    z-index: 10;
+    img:first-of-type{
+      width: 33.7%;
+      height: auto;
+      @media (max-width: $mobile) {
+        width: 57.7%;
+      }
+    }
+    img{
+      width: 26.7%;
+      filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        width: 39.7%;
+      }
+    }
+  }
+}
+
+#intro{
+  text-align: center;
+   @media (max-width: $mobile) {
+    .rowscontainer > div{
+      width: 100%;
+    }
+   }
+  #lyrics{
+    width: 70.4%;
+    height: auto;
+    filter: drop-shadow($defaultdd);
+    @media (max-width: $mobile) {
+      width: 113%;
+    }
+  }
+  @media (max-width: $mobile) {
+    &>div{
+      flex-direction: column-reverse;
+    }
+  }
+  #intronote{
+    position: relative;
+    z-index: 10;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    width: 100%;
+    @media (max-width: $mobile) {
+      padding-top: 5%;
+    }
+  }
+  #introlyricsholder{
+    position: relative;
+    z-index: 0;
+    img{
+      position: absolute;
+      margin-top: -9%;
+      width: 92%;
+      left: 0;
+    }
+  }
+  #photos{
+    img:first-of-type{
+      transform: rotate(5deg);
+      width: 72.3%;
+      padding-bottom: 8%;
+      margin-top: -5%;
+    }
+    img:nth-of-type(2){
+      transform: rotate(-3deg);
+      width: 62.6%;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+#iamlola{
+  #lolasinglepolaroidholder{
+    padding-top: 13%;
+    position: relative;
+    text-align: center;
+    @media (max-width: $mobile) {
+      padding-top: 68%
+    }
+    img:first-of-type{
+      position: absolute;
+      z-index: 10;
+      transform: rotate(-53deg);
+      opacity: .85;
+      margin-left: -9%;
+      margin-top: 5%;
+      filter: brightness(1.1);
+      width: 14.8%;
+      @media (max-width: $mobile) {
+        margin-left: -78px;
+        margin-top: 11%;
+        width: 37%;
+      }
+    }
+    img:nth-of-type(2){
+      position: relative;
+      z-index: 0;
+      width: 39.3%;
+      transform: rotate(-15deg);
+      filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        width: 93%;
+      }
+    }
+  }
+}
+
+#lyricholder{
+  padding-top: 8%;
+  justify-content: space-between;
+  img{
+    width: 100%;
+  }
+  &>div{
+    &:first-of-type{
+      img{
+        filter: drop-shadow($defaultdd);
+      }
+    }
+    &:nth-of-type(2){
+      img{
+        width: 91%;
+        margin-top: -12%;
+      }
+    }
+  }
+}
+
+#collage{
+  div{
+    position: relative;
+  }
+  .photo1 img, .photo2 img{
+    width: 100%;
+  }
+  #layer1{
+    display: flex;
+    flex-direction: row;
+    .tape{
+      z-index: 20;
+      width: 17%;
+      display: flex;
+      justify-content: flex-end;
+      img{
+        margin-top: 17%;
+        margin-right: -38%;
+        transform: rotate(-61deg);
+        width: 56%;
+      }
+    } 
+    .photo1{
+      z-index: 0;
+      width: 33%;
+      transform: rotate(6deg);
+      display: flex;
+      justify-content: flex-end;
+    }
+    .photo2{
+      z-index: 10;
+      width: 33%;
+      display: flex;
+      img{
+        transform: rotate(-9deg);
+        filter: drop-shadow($defaultdd);
+      }
+    }
+  }
+  #layer2{
+    .photos{
+        display: flex;
+        flex-direction: row;
+        margin-top: -10%;
+      .tape{
+        z-index: 30;
+        width: 33%;
+        display: flex;
+        img{
+          align-self: flex-end;
+          width: 56%;
+          margin-left: -12%;
+          bottom: -5%;
+          position: absolute;
+          filter: drop-shadow($defaultdd);
+        }
+      } 
+      .photo1{
+        z-index: 10;
+        width: 33%;
+        display: flex;
+        justify-content: flex-start;
+        img{
+          transform: rotate(-9deg);
+          margin-left: 23%;
+          width: 89%;
+          filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.3));
+        }
+      }
+      .photo2{
+        z-index: 30;
+        width: 33%;
+        display: flex;
+        img{
+          transform: rotate(5deg);
+          margin-left: 27%;
+          top: -3%;
+          width: 89%;
+          position: absolute;
+          align-self: flex-end;
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+        }
+      }
+    }
+  }
+}
+
+#dgms{
+    padding-top: 7%;
+    display: flex;
+  img:first-of-type{
+    position: absolute;
+    width: 25%;
+    z-index: 20;
+    right: 5%;
+    top: 16%;
+  }
+  img:nth-of-type(2){
+    position: absolute;
+    width: 25%;
+    margin-right: 25%;
+    z-index: 10;
+    align-self: flex-end;
+    right: -14%;
+    bottom: -4%;
+    filter: drop-shadow($defaultdd);
+  }
+  img:nth-of-type(3){
+    position: relative;
+    width: 72.5%;
+    margin-left: 10%;
+    z-index: 0;
+    filter: drop-shadow($defaultdd);
+  }
+}
+
+#pitstop{
+  margin-top: 10%;
+  #bgitems{
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    #upper{
+      &>div{
+        display: flex;
+        justify-content: flex-end;
+        img{
+          margin-right: -7%;
+          transform: rotate(-3deg);
+          position: relative;
+          z-index: 0;
+          width: 97.2%;
+        }
+      }
+      &>div:last-of-type{
+        justify-content: flex-start;
+        img{
+          margin-top: 2%;
+          transform: rotate(0deg);
+          position: relative;
+          z-index: 10;
+          width: 78%;
+        }
+      }
+    }
+    #lower{
+      &>div{
+        display: flex;
+        justify-content: flex-end;
+      }
+      &>div:first-of-type{
+        justify-content: flex-start;
+        img{
+          margin-top: 5%;
+          transform: rotate(0deg);
+          position: relative;
+          z-index: 10;
+          width: 73.3%;
+        }
+      }
+      &>div:last-of-type{
+        img{
+          margin-top: -22%;
+          margin-right: 5%;
+          width: 40.6%;
+        }
+      }
+    }
+  }
+  #tvplayer{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    #redtv{
+      margin-top: 45%;
+      width: 63.4%;
+      position: relative;
+      z-index: 10;
+    }
+    video{
+      position: absolute;
+      z-index: 0;
+      margin-top: 51%;
+      left: 23%;
+      width: 44%;
+    }
+    #playredtv{
+      position: relative;
+      z-index: 10;
+      margin-left: 21%;
+      margin-top: 1%;
+      width: 30.3%;
+    }
+  }
+}
+
+#itsmeagain{
+  margin-top: 10%;
+  margin: auto;
+  &>div{
+    position: relative;
+    margin: auto;
+  }
+  &>div:first-of-type{
+    width:70.5%;
+    margin: auto;
+    display: flex;
+    img:first-of-type{
+      position: absolute;
+      right: 0;
+      width: 56%;
+      z-index: 10;
+    }
+    img:last-of-type{
+      width: 70.5%;
+      position: relative;
+      z-index: 0;
+      margin-top: 32%;
+    }
+  }
+  &>div:nth-of-type(2){
+    text-align: center;
+    img{
+      margin-top: -5%;
+      width: 73.2%;
+    }
+  }
+  &>div:last-of-type{
+    width: 80.1%;
+    img:first-of-type{
+      width: 23.2%;
+      position: relative;
+      z-index: 20;
+      transform: rotate(-1deg);
+      margin-left: 10%;
+      margin-top: 5%;
+    }
+    img:nth-of-type(2){
+      position: absolute;
+      width: 43.9%;
+      z-index: 10;
+      margin-left: -36%;
+    }
+    img:last-of-type{
+      position: absolute;
+      right: 0;
+      width: 65.7%;
+      z-index: 0;
+      transform: rotate(3deg);
+      margin-top: 2%;
+    }
+  }
+}
+
+#you{
+  padding-top: 7%;
+  #youtop{
+    &>div:first-of-type{
+      img{
+        width: 98.7%;
+        margin-left: 22%;
+        position: relative;
+        z-index: 10;
+      }
+    }
+    &>div:nth-of-type(2){
+      text-align: center;
+      img{
+        width:90%;
+        transform: rotate(15deg);
+      }
+    }
+    &>div:last-of-type{
+      img{
+        width: 89%;
+        margin-left: -10%;
+        z-index: 10;
+        position: relative;
+        transform: rotate(-6deg);
+        filter: drop-shadow($defaultdd);
+      }
+    }
+  }
+
+  #camera{
+    margin-top: -1%;
+    #cameratop{
+      text-align: center;
+      img{
+        width: 92.9%;
+        position: relative;
+        z-index: 20;
+      }
+    }
+  }
+
+  #youmiddle{
+    margin-top: -5%;
+    display: flex;
+    &>div:first-of-type{
+      width: 62.85%;
+      img{
+        width: 100%;
+        position: relative;
+        z-index: 0;
+      }
+    }
+    &>div:last-of-type{
+      img{
+        width: 24.3%;
+        position: absolute;
+        right: 10%;
+        margin-top: 5%;
+      }
+    }
+  }
+
+  #youbottom{
+    position: relative;
+    width: 100%;
+    margin: 2% auto 0 auto;
+    #tvarea{
+      width: 92.2%;
+      margin: auto;
+      display: flex;
+      &>div:first-of-type{
+        width: 79.5%;
+        img{
+          width: 100%;
+          position: relative;
+          z-index: 20;
+        }
+      }
+      &>div:last-of-type{
+        width: 19%;
+        img{
+          width: 70%;
+          transform: rotate(8deg);
+          margin-top: 20%;
+          margin-left: -3%;
+          position: relative;
+          z-index: 15;
+        }
+      }
+    }
+  }
+
+  #playsticker{
+    margin-top: -4%;
+    img:first-of-type{
+      position: relative;
+      z-index: 5;
+      width: 48.1%;
+      margin-left: 25%;
+      margin-top: -4%;
+    }
+    img:last-of-type{
+      position: absolute;
+      z-index: 10;
+      width: 12.8%;
+      right: 20%;
+      transform: rotate(45deg);
+      margin-top: -3%;
+    }
+  }
+}
+
+#vacantheart{
+  width: 91.3%;
+  #hearttop{
+    position: relative;
+    img{
+      position: absolute;
+    }
+    img:first-of-type{
+      width: 42.215%;
+      z-index: 30;
+      left: calc(50% - 42.215%/2);
+    }
+    img:nth-of-type(2){
+      width: 48.3%;
+      position: relative;
+      z-index: 20;
+      transform: rotate(-6deg);
+      margin: 1.7% 0 0 7%;
+      filter: drop-shadow($defaultdd);
+    }
+    img:nth-of-type(3){
+      width: 39.55%;
+      z-index: 10;
+      transform: rotate(8deg);
+      bottom: 3.5%;
+      filter: drop-shadow($defaultdd);
+    }
+    img:last-of-type{
+      width: 36.8%;
+      z-index: 0;
+      transform: rotate(8deg);
+      margin: 14% 0 0 -10%;
+    }
+  }
+  #heartbottom{
+    margin: 7% auto 20% auto;
+    &>div:first-of-type{
+      display: flex;
+      justify-content: flex-end;
+      img{
+        width: 39%;
+        margin: 0 0 -14% 0;
+        align-self: flex-end;
+        z-index: 10;
+        position: absolute;
+        filter: drop-shadow($defaultdd);
+      }
+    }
+    &>div:last-of-type{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 50%;
+      img:first-of-type{
+        width: 100%;
+        margin: 0 37% 0 0;
+        align-self: flex-end;
+        transform: rotate(8deg);
+        filter: drop-shadow($defaultdd);
+      }
+      img:last-of-type{
+        width: 100%;
+        margin: 2% 0 0 -21%;
+        transform: rotate(8deg);
+        filter: drop-shadow($defaultdd);
+      }
+    }
+  }
+}
+
+#dpwi{
+  padding: 5% 0;
+  margin: auto;
+  #topgroup{
+    position: relative;
+    margin: auto;
+    #swoopphotos{
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      img:first-of-type{
+        transform: rotate(19deg);
+        width: 16.8%;
+        position: absolute;
+        z-index: 20;
+        right: 18%;
+        top: -9%;
+      }
+      img:nth-of-type(2){
+        width: 41.45%;
+        filter: drop-shadow($defaultdd);
+        position: relative;
+        z-index: 10;
+      }
+      img:nth-of-type(3){
+        width: 41.45%;
+        transform: rotate(7deg);
+        filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.3));
+        position: absolute;
+        left: 22.5%;
+        top: -3.5%;
+      }
+      img:nth-of-type(4){
+        width: 9.1%;
+        transform: rotate(-28deg);
+        position: absolute;
+        z-index: 10;
+        bottom: -3%;
+        right: 18%;
+        mix-blend-mode: multiply;
+      }
+      img:last-of-type{
+        width: 41.45%;
+        transform: rotate(-8deg);
+        filter: drop-shadow($defaultdd);
+        position: absolute;
+        right: 20%;
+        top: -1.5%;
+      }
+    }
+    #swoopbg{
+        position: absolute;
+        z-index: 0;
+        margin: auto;
+        top: 0;
+        width: 100%;
+      img:first-of-type{
+        width: 29.65%;
+        position: absolute;
+        z-index: 10;
+        margin-top: 27%;
+        transform: rotate(-17deg);
+        margin-left: 17.5%;
+      }
+      img:last-of-type{
+        width: 37.15%;
+        position: absolute;
+        margin-top: -8%;
+        transform: rotate(-4deg);
+        margin-left: 18%;
+      }
+    }
+  }
+  #tvstuff{
+    z-index: 10;
+    position: relative;
+    margin-top: 5%;
+    &>div:first-of-type{
+      display: flex;
+      flex-direction: column;
+      img{
+        width: 65.7%;
+        align-self: flex-end;
+        position: relative;
+        filter: drop-shadow($defaultdd);
+      }
+      img:first-of-type{
+        margin-top: -4%;
+        z-index: 10;
+      }
+      img:nth-of-type(2){
+        transform: rotate(13deg);
+        margin-right: 26%;
+        margin-top: -17%;
+        z-index: 5;
+      }
+      img:last-of-type{
+        transform: rotate(-9deg);
+        z-index: 0;
+        margin-top: -55%;
+        margin-right: -13%;
+      }
+    }
+    &>div:last-of-type{
+      width: 81.4%;
+      img{
+        width: 100%;
+        position: relative;
+        z-index: 15;
+      }
+    }
+  }
+}
+
+#godbless{
+  #topimages{
+    img{
+      width: 74.3%;
+      filter: drop-shadow($defaultdd);
+    }
+    &>div:first-of-type{
+      display: flex;
+      justify-content: flex-end;
+      img{
+        transform: rotate(10deg);
+        position: relative;
+        z-index: 5;
+      }
+    }
+    &>div:last-of-type{
+      img{
+        transform: rotate(-9deg);
+        margin-top: -3%;
+      }
+    }
+  }
+  #mainlyrics{
+    text-align: center;
+    img{
+      width: 76.65%;
+      margin-top: 2%;
+      filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.4));
+    }
+  }
+  #sublyrics{
+    margin-top: 5%;
+    img{
+      width: 90.75%;
+    }
+    &>div:first-of-type{
+      img{
+        transform: rotate(3deg);
+      }
+    }
+    &>div:last-of-type{
+      img{
+        transform: rotate(-9deg);
+      }
+    }
+  }
+}
+
+#sodisrespectful{
+  margin-top: 12%;
+  #camerastuff{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    &>img:first-of-type{
+      width: 67.86%;
+    }
+    &>img:last-of-type{
+      width: 92.9%;
+      position: relative;      
+    }
+  }
+  #bgstuff{
+    position: absolute;
+    z-index: 0;
+    top: -1%;
+    width: 100%;
+    img{
+      position: absolute;
+    }
+    img:first-of-type{
+      width: 14.65%;
+      transform: rotate(-5deg);
+      margin-top: 21%;
+      margin-left: 1%;
+    }
+    img:nth-of-type(2){
+      width: 41.08%;
+      transform: rotate(9deg);
+      right: 0;   
+    }
+    img:last-of-type{
+      width: 68%;
+      margin-top: 55%;
+      right: 7%;
+    }
+  }
+}
+
+#musicvideos{
+  margin-top: 30%;
+  #video1{
+    img:first-of-type{
+      margin-left: 5%;
+      margin-top: -7%;
+      transform: rotate(9deg);
+      position: absolute;
+      z-index: 5;
+      width: 30%;
+    }
+    img:nth-of-type(2){
+      margin-left: 7.5%;
+      transform: rotate(-7deg);
+      margin-top: 24%;
+      width: 23%;
+      position: absolute;
+      z-index: 0;
+    }
+    img:last-of-type{
+      width: 70.87%;
+      position: relative;
+      z-index: 10;
+      margin-left: 27%;
+    }
+  }
+  #video2{
+    text-align: center;
+    margin: 20% auto 10% auto;
+    position: relative;
+    &>img{
+      width: 77.1%;
+      position: relative;
+      z-index: 10;
+    }
+    #bluebgstuff{
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      top: 0;
+      img:first-of-type{
+        margin-top: -13%;
+        transform: rotate(-5deg);
+        position: absolute;
+        z-index: 5;
+        width: 70.1%;
+        left: 17%;
+      }
+      img:last-of-type{
+        right: 4%;
+        position: absolute;
+        z-index: 0;
+        transform: rotate(-8deg);
+        margin-top: -13.5%;
+        width: 13%;
+      }
+    }
+  }
+}

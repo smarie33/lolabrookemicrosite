@@ -1,0 +1,15 @@
+{
+  "name": "lolabrookejournal",
+  "version": "1.0.0",
+  "description": "Micro site for recording artist Lola Brookes album Dennis Daughter",
+  "main": "script.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded style.scss:style.css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css"
+  },
+  "author": "shannon mosley shannon.mosley.sme@sonymusic.com",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

@@ -6,6 +6,11 @@ $mobile: 768px;
  padding: 0px;
 }
 
+html,body{
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body{
   background: #a59fad url(images/BGpattern.jpg) repeat center top;
 }
@@ -214,19 +219,35 @@ img{
 #lyricholder{
   padding-top: 8%;
   justify-content: space-between;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
   img{
     width: 100%;
   }
   &>div{
     &:first-of-type{
+      @media (max-width: $mobile) {
+        margin-left: 3%;
+        margin-top: 7%;
+        width: 97%;
+      }
       img{
         filter: drop-shadow($defaultdd);
       }
     }
     &:nth-of-type(2){
+       @media (max-width: $mobile) {
+        width: 100%;
+      }
       img{
         width: 91%;
         margin-top: -12%;
+        @media (max-width: $mobile) {
+          width: 105%;
+          margin-left: 5%;
+          margin-top: 2%;
+        }
       }
     }
   }
@@ -242,6 +263,9 @@ img{
   #layer1{
     display: flex;
     flex-direction: row;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
     .tape{
       z-index: 20;
       width: 17%;
@@ -260,11 +284,19 @@ img{
       transform: rotate(6deg);
       display: flex;
       justify-content: flex-end;
+      @media (max-width: $mobile) {
+        width: 70%;
+      }
     }
     .photo2{
       z-index: 10;
       width: 33%;
       display: flex;
+      @media (max-width: $mobile) {
+        width: 70%;
+        margin-top: -45%;
+        margin-left: 21%;
+      }
       img{
         transform: rotate(-9deg);
         filter: drop-shadow($defaultdd);
@@ -272,14 +304,24 @@ img{
     }
   }
   #layer2{
+    @media (max-width: $mobile) {
+      margin-top: -48%;
+    }
     .photos{
         display: flex;
         flex-direction: row;
+        @media (max-width: $mobile) {
+          flex-direction: column;
+        }
         margin-top: -10%;
       .tape{
         z-index: 30;
         width: 33%;
         display: flex;
+        @media (max-width: $mobile) {
+          margin-top: 84%;
+          left: 75%;
+        }
         img{
           align-self: flex-end;
           width: 56%;
@@ -294,6 +336,10 @@ img{
         width: 33%;
         display: flex;
         justify-content: flex-start;
+        @media (max-width: $mobile) {
+          width: 70%;
+        }
+
         img{
           transform: rotate(-9deg);
           margin-left: 23%;
@@ -305,6 +351,12 @@ img{
         z-index: 30;
         width: 33%;
         display: flex;
+        @media (max-width: $mobile) {
+          width: 70%;
+          margin-top: -45%;
+          margin-left: 21%;
+        }
+
         img{
           transform: rotate(5deg);
           margin-left: 27%;
@@ -328,6 +380,10 @@ img{
     z-index: 20;
     right: 5%;
     top: 16%;
+     @media (max-width: $mobile) {
+      width: 29%;
+      right: 1%;
+     }
   }
   img:nth-of-type(2){
     position: absolute;
@@ -337,12 +393,16 @@ img{
     align-self: flex-end;
     right: -14%;
     bottom: -4%;
-    filter: drop-shadow($defaultdd);
+    filter: drop-shadow(3px -4px 5px rgba(0, 0, 0, 0.4));
+    @media (max-width: $mobile) {
+      width: 35%;
+      margin-right: 15%;
+    }
   }
   img:nth-of-type(3){
     position: relative;
-    width: 72.5%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 0;
     z-index: 0;
     filter: drop-shadow($defaultdd);
   }
@@ -358,22 +418,38 @@ img{
       &>div{
         display: flex;
         justify-content: flex-end;
+        @media (max-width: $mobile) {
+          width: 55%
+        }
         img{
           margin-right: -7%;
           transform: rotate(-3deg);
           position: relative;
           z-index: 0;
           width: 97.2%;
+          @media (max-width: $mobile) {
+            margin-right: -2%;
+            transform: rotate(-3deg);
+            width: 100%;
+          }
         }
       }
       &>div:last-of-type{
         justify-content: flex-start;
+        @media (max-width: $mobile) {
+          width: 43%
+        }
         img{
           margin-top: 2%;
           transform: rotate(0deg);
           position: relative;
           z-index: 10;
           width: 78%;
+          @media (max-width: $mobile) {
+            margin-top: 3%;
+            width: 100%;
+            margin-left: -8%;
+          }
         }
       }
     }
@@ -390,6 +466,10 @@ img{
           position: relative;
           z-index: 10;
           width: 73.3%;
+          @media (max-width: $mobile) {
+            width: 82%;
+            margin-left: -23%;
+          }
         }
       }
       &>div:last-of-type{
@@ -397,6 +477,11 @@ img{
           margin-top: -22%;
           margin-right: 5%;
           width: 40.6%;
+          @media (max-width: $mobile) {
+            margin-top: -30%;
+            margin-right: -14%;
+            width: 50%;
+          }
         }
       }
     }
@@ -410,6 +495,10 @@ img{
       width: 63.4%;
       position: relative;
       z-index: 10;
+      @media (max-width: $mobile) {
+        margin-top: 48%;
+        width: 77%;
+      }
     }
     video{
       position: absolute;
@@ -417,6 +506,10 @@ img{
       margin-top: 51%;
       left: 23%;
       width: 44%;
+      @media (max-width: $mobile) {
+        left: 16%;
+        width: 55%;
+      }
     }
     #playredtv{
       position: relative;
@@ -424,13 +517,17 @@ img{
       margin-left: 21%;
       margin-top: 1%;
       width: 30.3%;
+      @media (max-width: $mobile) {
+        margin-left: 1%;
+        margin-top: 5%;
+        width: 70%;
+      }
     }
   }
 }
 
 #itsmeagain{
   margin-top: 10%;
-  margin: auto;
   &>div{
     position: relative;
     margin: auto;
@@ -444,12 +541,21 @@ img{
       right: 0;
       width: 56%;
       z-index: 10;
+      @media (max-width: $mobile) {
+        right: -17%;
+        width: 90%;
+      }
     }
     img:last-of-type{
       width: 70.5%;
       position: relative;
       z-index: 0;
       margin-top: 32%;
+      @media (max-width: $mobile) {
+        width: 100%;
+        margin-top: 62%;
+        margin-left: -71px;
+      }
     }
   }
   &>div:nth-of-type(2){
@@ -457,10 +563,17 @@ img{
     img{
       margin-top: -5%;
       width: 73.2%;
+      @media (max-width: $mobile) {
+        margin-top: -5%;
+        width: 100%;
+      }
     }
   }
   &>div:last-of-type{
     width: 80.1%;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
     img:first-of-type{
       width: 23.2%;
       position: relative;
@@ -489,12 +602,21 @@ img{
 #you{
   padding-top: 7%;
   #youtop{
+    @media (max-width: $mobile) {
+          flex-direction: column;
+      &>div{
+        width: 90%;
+      }
+    }
     &>div:first-of-type{
       img{
         width: 98.7%;
         margin-left: 22%;
         position: relative;
         z-index: 10;
+        @media (max-width: $mobile) {
+          margin-left: 5%;
+        }
       }
     }
     &>div:nth-of-type(2){
@@ -502,6 +624,9 @@ img{
       img{
         width:90%;
         transform: rotate(15deg);
+        @media (max-width: $mobile) {
+          margin-top: -9%;
+        }
       }
     }
     &>div:last-of-type{
@@ -512,27 +637,42 @@ img{
         position: relative;
         transform: rotate(-6deg);
         filter: drop-shadow($defaultdd);
+        @media (max-width: $mobile) {
+          margin-left: 8%;
+        }
       }
     }
   }
 
   #camera{
     margin-top: -1%;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
     #cameratop{
       text-align: center;
       img{
         width: 92.9%;
         position: relative;
         z-index: 20;
+        @media (max-width: $mobile) {
+          width: 100%;
+        }
       }
     }
   }
 
   #youmiddle{
-    margin-top: -5%;
+    margin-top: -7%;
     display: flex;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
     &>div:first-of-type{
       width: 62.85%;
+      @media (max-width: $mobile) {
+        width: 100%;
+      }
       img{
         width: 100%;
         position: relative;
@@ -540,11 +680,19 @@ img{
       }
     }
     &>div:last-of-type{
+      @media (max-width: $mobile) {
+        margin-bottom: 10%;
+      }
       img{
         width: 24.3%;
         position: absolute;
         right: 10%;
         margin-top: 5%;
+        @media (max-width: $mobile) {
+          width: 90%;
+          right: 5%;
+          margin-top: -11%;
+        }
       }
     }
   }
@@ -559,14 +707,24 @@ img{
       display: flex;
       &>div:first-of-type{
         width: 79.5%;
+        @media (max-width: $mobile) {
+          width: 90%;
+        }
         img{
           width: 100%;
           position: relative;
           z-index: 20;
+          @media (max-width: $mobile) {
+            width: 95%;
+            margin-left: 2.5%;
+          }
         }
       }
       &>div:last-of-type{
         width: 19%;
+        @media (max-width: $mobile) {
+          width: 10%;
+        }
         img{
           width: 70%;
           transform: rotate(8deg);
@@ -574,6 +732,10 @@ img{
           margin-left: -3%;
           position: relative;
           z-index: 15;
+          @media (max-width: $mobile) {
+            width: 145%;
+            margin-left: -77%;
+          }
         }
       }
     }
@@ -587,6 +749,10 @@ img{
       width: 48.1%;
       margin-left: 25%;
       margin-top: -4%;
+      @media (max-width: $mobile) {
+        width: 95%;
+        margin-left: 2.5%;
+      }
     }
     img:last-of-type{
       position: absolute;
@@ -595,6 +761,10 @@ img{
       right: 20%;
       transform: rotate(45deg);
       margin-top: -3%;
+      @media (max-width: $mobile) {
+        width: 23.8%;
+        right: -6%;
+      }
     }
   }
 }
@@ -610,6 +780,10 @@ img{
       width: 42.215%;
       z-index: 30;
       left: calc(50% - 42.215%/2);
+      @media (max-width: $mobile) {
+        width: 57.215%;
+        left: 28.8925%;
+      }
     }
     img:nth-of-type(2){
       width: 48.3%;
@@ -618,6 +792,11 @@ img{
       transform: rotate(-6deg);
       margin: 1.7% 0 0 7%;
       filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        width: 62.3%;
+        margin: 1.7% 0 0 3%;
+      }
+
     }
     img:nth-of-type(3){
       width: 39.55%;
@@ -625,12 +804,21 @@ img{
       transform: rotate(8deg);
       bottom: 3.5%;
       filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        width: 60.55%;
+        bottom: 3.5%;
+      }
     }
     img:last-of-type{
       width: 36.8%;
       z-index: 0;
       transform: rotate(8deg);
       margin: 14% 0 0 -10%;
+      @media (max-width: $mobile) {
+        width: 75.8%;
+        margin: 14% 0 0 -18%;
+      }
+
     }
   }
   #heartbottom{
@@ -645,12 +833,19 @@ img{
         z-index: 10;
         position: absolute;
         filter: drop-shadow($defaultdd);
+        @media (max-width: $mobile) {
+          width: 55%;
+          margin: 0 -17px -20% 0px;
+        }
       }
     }
     &>div:last-of-type{
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
+      @media (max-width: $mobile) {
+        width: 70%;
+      }
       width: 50%;
       img:first-of-type{
         width: 100%;
@@ -658,12 +853,20 @@ img{
         align-self: flex-end;
         transform: rotate(8deg);
         filter: drop-shadow($defaultdd);
+        @media (max-width: $mobile) {
+          width: 121%;
+          margin: 0 11% 0 0;
+        }
       }
       img:last-of-type{
         width: 100%;
         margin: 2% 0 0 -21%;
         transform: rotate(8deg);
         filter: drop-shadow($defaultdd);
+        @media (max-width: $mobile) {
+          width: 121%;
+          margin: 2% 0 0 -17%;
+        }
       }
     }
   }
@@ -672,6 +875,9 @@ img{
 #dpwi{
   padding: 5% 0;
   margin: auto;
+  @media (max-width: $mobile) {
+    padding: 15% 0;
+  }
   #topgroup{
     position: relative;
     margin: auto;
@@ -686,12 +892,22 @@ img{
         z-index: 20;
         right: 18%;
         top: -9%;
+        @media (max-width: $mobile) {
+          width: 21.8%;
+          right: -5%;
+          top: -14%;
+        }
       }
       img:nth-of-type(2){
         width: 41.45%;
         filter: drop-shadow($defaultdd);
         position: relative;
         z-index: 10;
+        @media (max-width: $mobile) {
+          width: 62%;
+          z-index: 15;
+          margin-left: 20%;
+        }
       }
       img:nth-of-type(3){
         width: 41.45%;
@@ -700,6 +916,10 @@ img{
         position: absolute;
         left: 22.5%;
         top: -3.5%;
+        @media (max-width: $mobile) {
+          width: 62%;
+          left: 20.5%;
+        }
       }
       img:nth-of-type(4){
         width: 9.1%;
@@ -709,6 +929,10 @@ img{
         bottom: -3%;
         right: 18%;
         mix-blend-mode: multiply;
+        @media (max-width: $mobile) {
+          bottom: 1%;
+          right: 2%;
+        }
       }
       img:last-of-type{
         width: 41.45%;
@@ -717,6 +941,10 @@ img{
         position: absolute;
         right: 20%;
         top: -1.5%;
+        @media (max-width: $mobile) {
+          width: 62%;
+          right: -3%;
+        }
       }
     }
     #swoopbg{
@@ -732,6 +960,11 @@ img{
         margin-top: 27%;
         transform: rotate(-17deg);
         margin-left: 17.5%;
+        @media (max-width: $mobile) {
+          width: 59%;
+          margin-top: 33%;
+          margin-left: 4.5%;
+        }
       }
       img:last-of-type{
         width: 37.15%;
@@ -739,6 +972,11 @@ img{
         margin-top: -8%;
         transform: rotate(-4deg);
         margin-left: 18%;
+        @media (max-width: $mobile) {
+          width: 58%;
+          margin-top: -11%;
+          margin-left: 6%;
+        }
       }
     }
   }
@@ -746,38 +984,66 @@ img{
     z-index: 10;
     position: relative;
     margin-top: 5%;
+    @media (max-width: $mobile) {
+      margin-top: 14%;
+    }
     &>div:first-of-type{
       display: flex;
       flex-direction: column;
+      @media (max-width: $mobile) {
+        width: 25%;
+      }
       img{
         width: 65.7%;
         align-self: flex-end;
         position: relative;
         filter: drop-shadow($defaultdd);
+        @media (max-width: $mobile) {
+          width: 132%;
+        }
       }
       img:first-of-type{
         margin-top: -4%;
         z-index: 10;
+        @media (max-width: $mobile) {
+          margin-top: -10%;
+          margin-right: -59%;
+        }
       }
       img:nth-of-type(2){
         transform: rotate(13deg);
         margin-right: 26%;
         margin-top: -17%;
         z-index: 5;
+        @media (max-width: $mobile) {
+          margin-right: -22%;
+          margin-top: -36%;
+        }
       }
       img:last-of-type{
         transform: rotate(-9deg);
         z-index: 0;
         margin-top: -55%;
         margin-right: -13%;
+        @media (max-width: $mobile) {
+          margin-top: -107%;
+          margin-right: -85%;
+        }
       }
     }
     &>div:last-of-type{
       width: 81.4%;
+      @media (max-width: $mobile) {
+        width: 81.4%;
+      }
       img{
         width: 100%;
         position: relative;
         z-index: 15;
+        @media (max-width: $mobile) {
+        width: 109%;
+        margin-left: 18%;
+        }
       }
     }
   }
@@ -788,6 +1054,9 @@ img{
     img{
       width: 74.3%;
       filter: drop-shadow($defaultdd);
+      @media (max-width: $mobile) {
+        width: 94%;
+      }
     }
     &>div:first-of-type{
       display: flex;
@@ -811,12 +1080,26 @@ img{
       width: 76.65%;
       margin-top: 2%;
       filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.4));
+      @media (max-width: $mobile) {
+        width: 95%;
+        margin-top: 5%;
+        margin-left: 2.5%;
+      }
     }
   }
   #sublyrics{
     margin-top: 5%;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      &>div{
+        width: 100%;
+      }
+    }
     img{
       width: 90.75%;
+      @media (max-width: $mobile) {
+        width: 100%;
+      }
     }
     &>div:first-of-type{
       img{
@@ -837,12 +1120,22 @@ img{
     position: relative;
     z-index: 10;
     text-align: center;
+    @media (max-width: $mobile) {
+      padding-bottom: 12%;
+    }
     &>img:first-of-type{
       width: 67.86%;
+      @media (max-width: $mobile) {
+        width: 95%;
+      }
     }
     &>img:last-of-type{
       width: 92.9%;
-      position: relative;      
+      position: relative;
+      @media (max-width: $mobile) {
+        width: 100%;
+        margin-left: 5%;
+      }      
     }
   }
   #bgstuff{
@@ -858,16 +1151,27 @@ img{
       transform: rotate(-5deg);
       margin-top: 21%;
       margin-left: 1%;
+      @media (max-width: $mobile) {
+        width: 18.65%;
+      }
     }
     img:nth-of-type(2){
       width: 41.08%;
       transform: rotate(9deg);
-      right: 0;   
+      right: 0;
+      @media (max-width: $mobile) {
+        margin-top: 3%;
+      }
     }
     img:last-of-type{
       width: 68%;
       margin-top: 55%;
       right: 7%;
+      @media (max-width: $mobile) {
+        width: 72%;
+        margin-top: 66%;
+        right: 1%;
+      }
     }
   }
 }
@@ -882,6 +1186,11 @@ img{
       position: absolute;
       z-index: 5;
       width: 30%;
+      @media (max-width: $mobile) {
+        margin-left: 2%;
+        margin-top: -11%;
+        width: 38%;
+      }
     }
     img:nth-of-type(2){
       margin-left: 7.5%;
@@ -890,22 +1199,37 @@ img{
       width: 23%;
       position: absolute;
       z-index: 0;
+      @media (max-width: $mobile) {
+        margin-left: 2%;
+        margin-top: 27%;
+        width: 30%;
+      }
     }
     img:last-of-type{
       width: 70.87%;
       position: relative;
       z-index: 10;
       margin-left: 27%;
+      @media (max-width: $mobile) {
+        width: 90%;
+        margin-left: 30%;
+      }
     }
   }
   #video2{
     text-align: center;
     margin: 20% auto 10% auto;
     position: relative;
+    @media (max-width: $mobile) {
+      margin: 33% auto 0% auto;
+    }
     &>img{
       width: 77.1%;
       position: relative;
       z-index: 10;
+      @media (max-width: $mobile) {
+        width: 103%;
+      }
     }
     #bluebgstuff{
       position: absolute;
@@ -919,6 +1243,11 @@ img{
         z-index: 5;
         width: 70.1%;
         left: 17%;
+        @media (max-width: $mobile) {
+        margin-top: -18%;
+        width: 95%;
+        left: 19px;
+        }
       }
       img:last-of-type{
         right: 4%;
@@ -927,6 +1256,11 @@ img{
         transform: rotate(-8deg);
         margin-top: -13.5%;
         width: 13%;
+        @media (max-width: $mobile) {
+          right: -19%;
+          margin-top: -17.5%;
+          width: 23%;
+        }
       }
     }
   }

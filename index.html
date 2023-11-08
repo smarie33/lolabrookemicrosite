@@ -4,245 +4,417 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lola Brooke - Dennis Daughter</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="slickcss" rel="stylesheet" href="js/slick.css">
+    <link id="styles" rel="stylesheet" href="style.css">
   </head>
 
   <body>
 
-    <section id="cover" class="">
-      <div id="socialmediatilt">
-        <div id="socialmedia">
+    <script>
+    document.addEventListener("DOMContentLoaded", startLoadScreen);
+    function startLoadScreen(){
+      const fulljs = document.getElementById("fulljs").src;
+      const gsap = document.getElementById("gsapjs").src;
+      const scroll = document.getElementById("scrolljs").src;
+      const smooth = document.getElementById("smooth").src;
+      const jquery = document.getElementById("forslickjquery").src;
+      const slick = document.getElementById("slick").src;
+      const styles = document.getElementById("styles").href;
+
+      let externals = [
+        gsap,
+        scroll,
+        smooth,
+        jquery,
+        slick,
+        fulljs,
+        styles,
+        'images/1cover/instagram.png',
+        'images/1cover/x.png',
+        'images/1cover/youtube.png',
+        'images/1cover/tiktok.png',
+        'images/1cover/tiktok.png',
+        'images/1cover/dennisdaughter.jpg',
+        'images/1cover/notebook.png',
+        'images/2tracklist/tracklist-cutout1.png',
+        'images/2tracklist/tracklist-cutout2.png',
+        'images/2tracklist/tracklist.png',
+        'images/3intro/intro-lyrics.png',
+        'images/4iamlola/iam-slyrics.png',
+        'images/5dgms/dgms-lyrics.png',
+        'images/7itsmeagain/itsme-lyrics2.png',
+        'images/BGpattern.jpg'
+      ];
+      let percent_complete = 0;
+      let load = 0;
+      let toLoad = externals;
+      let request = new XMLHttpRequest();
+      const event = new Event('launchInit');
+
+      request.addEventListener('readystatechange', function(e) {
+        if(request.readyState == 2 && request.status == 200) {
+        // Download is being started
+        }else if(request.readyState == 3) {
+          // Download is under progress
+        }else if(request.readyState == 4) {
+          let pc = 100 / toLoad.length;
+          percent_complete += pc;
+          let prog = document.getElementById("progress");
+          prog.style.width = percent_complete+"%";
+          load++;
+          if(load != toLoad.length){
+            request.open("GET", toLoad[load], true);
+            request.responseType = 'arraybuffer';
+            request.send();
+          }else{
+            setTimeout(function(){
+              document.querySelector('.page-load').style.opacity = 0;
+              document.dispatchEvent(event);
+            }, 750);
+            setTimeout(function(){
+              document.querySelector('.page-load').style.display = 'none';
+            }, 950);
+          }
+        }
+      });
+
+      request.open("GET", toLoad[load], true);
+      request.responseType = 'arraybuffer';
+      request.send();
+    };
+    </script>
+    <div class="page-load" style="width: 100vw; height: 100vh; background-color: #a59fad;position: fixed; z-index: 2200; place-content: center; flex-direction: column; transition: opacity 0.5s ease 0s; opacity: 1;">
+      <div id="progress" style="height: 10px; background-color: #000000; position: fixed; width: 0%; top: 0px; transition: all 0.3s ease 0s;"></div>
+      <div style="height: 100vh; display:flex; flex-wrap:wrap; justify-content: center; align-content: center; color:#ffa200;font-family:Arial, Helvetica, sans-serif;text-align:center"><strong><span style="color:#9c1414">DENNIS</span> <span style="color:#062551">DAUGHTER</span></strong></div>
+    </div>
+
+    <div class="content">
+      <section id="cover" class="">
+        <div id="stream-here">
+          <a target="_blank" href="https://lolabrooke.lnk.to/DennisDuaghter">
+            <img src="images/1cover/streamhere.png" />
+          </a>
         </div>
-      </div>
-      <div id="albumimage"><img src="images/1cover/dennisdaughter.jpg" /></div>
-      <div id="bookintheback">
-        <img src="images/1cover/notebook.png" />
-      </div>
-    </section>
-
-    <section id="songlist" class="">
-      <div id="songlistpaper">
-        <img src="images/2tracklist/tracklist.png">
-      </div>
-      <div id="lolas">
-        <img src="images/2tracklist/tracklist-cutout1.png" />
-        <img src="images/2tracklist/tracklist-cutout2.png" />
-      </div>
-    </section>
-
-    <section id="intro" class="">
-      <img id="lyrics" src="images/3intro/intro-lyrics.png" />
-      <div class="rowscontainer">
-        <div id="notes">
-          <img id="intronote" src="images/3intro/intro-note.png" />
-          <div id="introlyricsholder">
-            <img src="images/3intro/intro-lyrics2.png" />
+        <div id="socialmediatilt">
+          <div id="socialmedia">
+            <a class="insta" href="https://www.instagram.com/lola.brooke/" target="_blank"><img src="images/1cover/instagram.png" /></a>
+            <a class="twit" href="https://twitter.com/lolabrooke718" target="_blank"><img src="images/1cover/x.png" /></a>
+            <a class="yt" href="https://www.youtube.com/c/LolaBrooke718" target="_blank"><img src="images/1cover/youtube.png" /></a>
+            <a class="tiktok" href="https://www.tiktok.com/@MS4wLjABAAAAZSGm0BDr6PU0xDuwfpKCAlyVXFjysSJMbtAlLdpQhFd_4gbb2eFPAis7RLP_ibRW?lang=en" target="_blank"><img src="images/1cover/tiktok.png" /></a>
           </div>
         </div>
-        <div id="photos">
-          <img src="images/3intro/intro-polaroid1.png" />
-          <img src="images/3intro/intro-polaroid2.jpg" />
+        <div id="albumimage"><img src="images/1cover/dennisdaughter.jpg" /></div>
+        <div id="bookintheback">
+          <img src="images/1cover/notebook.png" />
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="iamlola" class="">
-      <div id="lolasinglepolaroidholder">
-        <img src="images/4iamlola/whitetape.png" />
-        <img src="images/4iamlola/iam-polaroid.jpg" />
-      </div>
-      <div id="lyricholder" class="rowscontainer">
-        <div>
-          <img src="images/4iamlola/iam-slyrics.png" />
+      <section id="songlist" class="">
+        <div id="songlistpaper">
+          <img class="lola-lyrics" src="images/2tracklist/tracklist.png">
         </div>
-        <div>
-          <img src="images/4iamlola/iam-cutout.png" />
+        <div id="lolas">
+          <img class="lola-left" src="images/2tracklist/tracklist-cutout1.png" />
+          <img class="lola-right" src="images/2tracklist/tracklist-cutout2.png" />
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="collage" class="">
-      <div id="layer1">
-        <div class="tape"><img src="images/4iamlola/collage-pinktape.png" /></div>
-        <div class="photo1"><img src="images/4iamlola/collage-1.jpg" /></div>
-        <div class="photo2"><img src="images/4iamlola/collage-2.jpg" /></div>
-      </div>
-      <div id="layer2">
-        <div class="photos">
-          <div class="photo1"><img src="images/4iamlola/collage-3.jpg" /></div>
-          <div class="photo2"><img src="images/4iamlola/collage-4.jpg" /></div>
-          <div class="tape"><img src="images/4iamlola/collage-redtape.png" /></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="dgms" class="">
-      <img src="images/5dgms/dgms-sticker.png" />
-      <img src="images/5dgms/dgms-cutout.png" />
-      <img src="images/5dgms/dgms-lyrics.png" />
-    </section>
-
-    <section id="pitstop" class="">
-      <div id="bgitems">
-        <div id="upper" class="rowscontainer">
-          <div>
-            <img src="images/6pitstop/ps-cd.jpg" />
+      <section id="intro" class="">
+        <img id="lyrics" src="images/3intro/intro-lyrics.png" />
+        <div class="rowscontainer">
+          <div id="notes">
+            <img id="intronote" src="images/3intro/intro-note.png" />
+            <div id="introlyricsholder">
+              <img class="alligator" src="images/3intro/intro-lyrics2.png" />
+            </div>
           </div>
-          <div>
-            <img src="images/6pitstop/ps-polaroid.png" />
+          <div id="photos">
+            <img class="polaroid1" src="images/3intro/intro-polaroid1.png" />
+            <img class="polaroid2" src="images/3intro/intro-polaroid2.jpg" />
           </div>
         </div>
-        <div id="lower" class="rowscontainer">
-          <div>
-            <img src="images/6pitstop/ps-lyrics.png" />
-          </div>
-          <div>
-            <img src="images/6pitstop/ps-film.png" />
-          </div>
-        </div>
-      </div>
-      <div id=tvplayer>
-        <img id="redtv" src="images/6pitstop/ps-tv.png" />
-        <video muted autoplay loop>
-          <source src="images/6pitstop/ps-previewSmall.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img id="playredtv" src="images/6pitstop/ps-playme.svg">
-      </div>
-    </section>
+      </section>
 
-    <section id="itsmeagain" class="">
-      <div id="imagewlyrics">
-        <img src="images/7itsmeagain/itsme-polaroid.png" />
-        <img src="images/7itsmeagain/itsme-lyrics1.png" />
-      </div>
-      <div id="lyrics">
-        <img src="images/7itsmeagain/itsme-lyrics2.png" />
-      </div>
-      <div id="lyriccollage">
-        <img src="images/7itsmeagain/itsme-film.png" />
-        <img src="images/7itsmeagain/itsme-tape.png" />
-        <img src="images/7itsmeagain/itsme-lyrics3.png" />
-      </div>
-    </section>
+      <section id="tickertape1" class="tickertape"></section>
 
-    <section id="you" class="">
-      <div id="youtop" class="rowscontainerthree">
-        <div>
-          <img src="images/8you/you-sticker.png" />
-        </div>
-        <div>
-          <img src="images/8you/you-polaroid.jpg" />
-        </div>
-        <div>
-          <img src="images/8you/you-lyrics.png" />
-        </div>
-      </div>
-      <div id="camera">
-        <div id="cameratop"><img src="images/8you/you-camera.png" /></div>
-        <div id="slideshow"></div>
-      </div>
-      <div id="youmiddle">
-        <div><img src="images/8you/you-film.png" /></div>
-        <div><img src="images/6pitstop/ps-playme.svg" /></div>
-      </div>
-      <div id="youbottom">
-        <div id="tvarea">
-          <div><img src="images/8you/you-mv-tv.png" /></div>
-          <div><img src="images/8you/you-mv-film.png" /></div>
-        </div>
-        <div id="playsticker">
-          <img src="images/8you/you-mv-play.png" />
-          <img src="images/8you/you-mv-tape.png" />
-        </div>
-      </div>
-    </section>
-
-    <section id="vacantheart" class="">
-      <div id="hearttop">
-        <img src="images/9vacantheart/vacant-tape.png" />
-        <img src="images/9vacantheart/vacant-lyrics1.png" />
-        <img src="images/9vacantheart/vacant-polaroid.jpg" />
-        <img src="images/9vacantheart/vacant-scrappaper.png" />
-      </div>
-      <div id="heartbottom" class="rowscontainer">
-        <div>
-          <img src="images/9vacantheart/vacant-cutout.png" />
-        </div>
-        <div>
-          <img src="images/9vacantheart/vacant-lyrics2.png" />
-          <img src="images/9vacantheart/vacant-lyrics3.png" />
-        </div>
-      </div>
-    </section>
-
-    <section id="dpwi" class="">
-      <div id="topgroup">
-        <div id="swoopphotos">
+      <section id="iamlola" class="">
+        <div id="lolasinglepolaroidholder">
           <img src="images/4iamlola/whitetape.png" />
-          <img src="images/10dpwi/dpwi-polaroid1a.png" />
-          <img src="images/10dpwi/dpwi-polaroid1c.png" />
-          <img src="images/10dpwi/dpwi-sticker.png" />
-          <img src="images/10dpwi/dpwi-polaroid1b.png" />
+          <img class="lolapol" src="images/4iamlola/iam-polaroid.jpg" />
         </div>
-        <div id="swoopbg">
-          <img src="images/10dpwi/dpwi-scrap.jpg" />
-          <img src="images/10dpwi/dpwi-lyrics.png" />
+        <div id="lyricholder" class="rowscontainer">
+          <div>
+            <img class="iamlyrics" src="images/4iamlola/iam-slyrics.png" />
+          </div>
+          <div>
+            <img class="lolasoundwave" src="images/4iamlola/iam-cutout.png" />
+          </div>
         </div>
-      </div>
-      <div id="tvstuff" class="rowscontainer">
-        <div>
-          <img src="images/10dpwi/dpwi-polaroid2a.png" />
-          <img src="images/10dpwi/dpwi-polaroid2b.png" />
-          <img src="images/10dpwi/dpwi-polaroid2c.png" />
-        </div>
-        <div>
-          <img src="images/10dpwi/dpwi-tv.png" />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="godbless" class="">
-      <div id="topimages" class="rowscontainer">
-        <div><img src="images/11godbless/godbless-polaroid1.jpg"></div>
-        <div><img src="images/11godbless/godbless-polaroid2.jpg"></div>
-      </div>
-      <div id="mainlyrics"><img src="images/11godbless/godbless-lyrics1.png"></div>
-      <div id="sublyrics" class="rowscontainer">
-        <div><img src="images/11godbless/godbless-lyrics2.png"></div>
-        <div><img src="images/11godbless/godbless-lyrics3.png"></div>
-      </div>
-    </section>
-
-    <section id="sodisrespectful" class="">
-      <div id="camerastuff">
-        <img src="images/12sodisrespectful/sodisrespectful-title.png">
-        <img src="images/8you/you-camera.png" />
-        <div id="secondslideshow"></div>
-      </div>
-      <div id="bgstuff">
-         <img src="images/12sodisrespectful/sodisrespectful-film.png" />
-         <img src="images/12sodisrespectful/sodisrespectful-sticker.png" />
-         <img src="images/12sodisrespectful/sodisrespectful-lyrics.png" />
-      </div>
-    </section>
-
-    <section id="musicvideos" class="">
-      <div id="video1" class="rowscontainer">
-         <img src="images/13musicvideos/justrelax-polaroid1.png" />
-         <img src="images/13musicvideos/justrelax-polaroid2.png" />
-         <img src="images/13musicvideos/justrelax-tv.png" />
-      </div>
-      <div id="video2">
-          <img src="images/13musicvideos/hereicome-tv.png" />
-        <div id="bluebgstuff">
-          <img src="images/13musicvideos/hereicome-title.png" />
-          <img src="images/13musicvideos/hereicome-film.png" />
+      <section id="collage" class="">
+        <div id="layer1">
+          <div class="tape"><img src="images/4iamlola/collage-pinktape.png" /></div>
+          <div class="photo1"><img src="images/4iamlola/collage-1.jpg" /></div>
+          <div class="photo2"><img src="images/4iamlola/collage-2.jpg" /></div>
         </div>
-      </div>
-    </section>
+        <div id="layer2">
+          <div class="photos">
+            <div class="photo1"><img src="images/4iamlola/collage-3.jpg" /></div>
+            <div class="photo2"><img src="images/4iamlola/collage-4.jpg" /></div>
+            <div class="tape"><img src="images/4iamlola/collage-redtape.png" /></div>
+          </div>
+        </div>
+      </section>
 
-    <script src="script.js"></script>
+      <section id="tickertape2" class="tickertape"></section>
+
+      <section id="dgms" class="">
+        <img class="burst" src="images/5dgms/dgms-sticker.png" />
+        <img class="cutoputwbluetape" src="images/5dgms/dgms-cutout.png" />
+        <img src="images/5dgms/dgms-lyrics.png" />
+      </section>
+
+      <section id="pitstop" class="">
+        <div id="bgitems">
+          <div id="upper" class="rowscontainer">
+            <div>
+              <img src="images/6pitstop/ps-cd.jpg" />
+            </div>
+            <div>
+              <img src="images/6pitstop/ps-polaroid.png" />
+            </div>
+          </div>
+          <div id="lower" class="rowscontainer">
+            <div>
+              <img src="images/6pitstop/ps-lyrics.png" />
+            </div>
+            <div>
+              <img src="images/6pitstop/ps-film.png" />
+            </div>
+          </div>
+        </div>
+        <div id=tvplayer>
+          <a href="https://www.youtube.com/watch?v=aNHHA5XVcCc&ab_channel=LolaBrookeVEVO" target="_blank">
+            <img id="redtv" src="images/6pitstop/ps-tv.png" />
+          </a>
+          <video muted autoplay loop poster="images/previewvideos/ps-previewSmall.jpg">
+            <source src="images/previewvideos/ps-previewSmall.m4v" type="video/x-m4v">
+            <source src="images/previewvideos/ps-previewSmall.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <a class="playerbutton" href="https://www.youtube.com/watch?v=aNHHA5XVcCc&ab_channel=LolaBrookeVEVO" target="_blank">
+            <img id="playredtv" src="images/6pitstop/ps-playme.svg">
+          </a>
+        </div>
+      </section>
+
+      <section id="pitstopbts" class="">
+        <div id="camera">
+          <div id="cameratop"><img src="images/8you/you-camera.png" /></div>
+          <div id="pitstopbtsvideo">
+            <video muted autoplay loop poster="images/previewvideos/PitStop_BTS.jpg">
+              <source src="images/previewvideos/PitStop_BTS.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div id="pitstopbtsbg">
+          <div><img class="pitstoplyrics2" src="images/6pitstop/ps-lyrics2.png" /></div>
+          <div><img class="burstred" src="images/6pitstop/ps-sticker.png" /></div>
+        </div>
+      </section>
+
+      <section id="tickertape3" class="tickertape"></section>
+
+      <section id="itsmeagain" class="">
+        <div id="imagewlyrics">
+          <img class="lolapink" src="images/7itsmeagain/itsme-polaroid.png" />
+          <img class="meagain" src="images/7itsmeagain/itsme-lyrics1.png" />
+        </div>
+        <div id="lyrics">
+          <img src="images/7itsmeagain/itsme-lyrics2.png" />
+        </div>
+        <div id="lyriccollage">
+          <img src="images/7itsmeagain/itsme-film.png" />
+          <img src="images/7itsmeagain/itsme-tape.png" />
+          <img src="images/7itsmeagain/itsme-lyrics3.png" />
+        </div>
+      </section>
+
+      <section id="you" class="">
+        <div id="youtop" class="rowscontainerthree">
+          <div>
+            <img class="goldsticker" src="images/8you/you-sticker.png" />
+          </div>
+          <div>
+            <img class="manphoto" src="images/8you/you-polaroid.jpg" />
+          </div>
+          <div>
+            <img class="badasslyrics" src="images/8you/you-lyrics.png" />
+          </div>
+        </div>
+        <div id="camera">
+          <div id="cameratop"><img src="images/8you/you-camera.png" /></div>
+          <div id="youbtsvideo">
+            <video muted autoplay loop poster="images/previewvideos/You_BTS.jpg">
+            <source src="images/previewvideos/You_BTS.m4v" type="video/x-m4v">
+            <source src="images/previewvideos/You_BTS.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          </div>
+        </div>
+        <div id="youmiddle">
+          <div><img src="images/8you/you-film.png" /></div>
+          <div><a href="https://www.youtube.com/watch?v=UBdDUh9a2k0&ab_channel=LolaBrookeVEVO" target="_blank"><img class="playpitstopbtn" src="images/6pitstop/ps-playme.svg" /></a></div>
+        </div>
+        <div id="youbottom">
+          <div id="tvarea">
+            <div>
+              <img src="images/8you/you-mv-tv.png" />
+              <video muted autoplay loop poster="images/previewvideos/You_MV.jpg">
+                <source src="images/previewvideos/You_MV.webm" type="video/webm">
+                <source src="images/previewvideos/You_MV.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div><img src="images/8you/you-mv-film.png" /></div>
+          </div>
+          <div id="playsticker">
+            <a href="https://www.youtube.com/watch?v=Wn28QrKvFPw&ab_channel=LolaBrookeVEVO" target="_blank"><img class="playyoubtn" src="images/8you/you-mv-play.png" /></a>
+            <img id="sticker" src="images/8you/you-mv-tape.png" />
+          </div>
+        </div>
+      </section>
+
+      <section id="tickertape4" class="tickertape"></section>
+
+      <section id="vacantheart" class="">
+        <div id="hearttop">
+          <img src="images/9vacantheart/vacant-tape.png" />
+          <img src="images/9vacantheart/vacant-lyrics1.png" />
+          <img class="vacantpic" src="images/9vacantheart/vacant-polaroid.jpg" />
+          <img class="" src="images/9vacantheart/vacant-scrappaper.png" />
+        </div>
+        <div id="heartbottom" class="rowscontainer">
+          <div>
+            <img class="vacantcutout" src="images/9vacantheart/vacant-cutout.png" />
+          </div>
+          <div>
+            <img class="vacantlyrics1" src="images/9vacantheart/vacant-lyrics2.png" />
+            <img class="vacantlyrics2" src="images/9vacantheart/vacant-lyrics3.png" />
+          </div>
+        </div>
+      </section>
+
+      <section id="dpwi" class="">
+        <div id="topgroup">
+          <div id="swoopphotos">
+            <img src="images/4iamlola/whitetape.png" />
+            <img class="swoopsecond" src="images/10dpwi/dpwi-polaroid1a.png" />
+            <img class="swoopthird" src="images/10dpwi/dpwi-polaroid1c.png" />
+            <img src="images/10dpwi/dpwi-sticker.png" />
+            <img src="images/10dpwi/dpwi-polaroid1b.png" />
+          </div>
+          <div id="swoopbg">
+            <img src="images/10dpwi/dpwi-scrap.jpg" />
+            <img src="images/10dpwi/dpwi-lyrics.png" />
+          </div>
+        </div>
+        <div id="tvstuff" class="rowscontainer">
+          <div>
+            <img src="images/10dpwi/dpwi-polaroid2a.png" />
+            <img src="images/10dpwi/dpwi-polaroid2b.png" />
+            <a href="https://www.youtube.com/watch?v=ZuCnKQZ7_AE&ab_channel=LolaBrookeVEVO" target="_blank"><img src="images/10dpwi/dpwi-polaroid2c.png" /></a>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/watch?v=ZuCnKQZ7_AE&ab_channel=LolaBrookeVEVO" target="_blank"><img src="images/10dpwi/dpwi-tv.png" /></a>
+            <video muted autoplay loop poster="images/previewvideos/DPWI_MV.jpg">
+              <source src="images/previewvideos/DPWI_MV.m4v" type="video/x-m4v">
+              <source src="images/previewvideos/DPWI_MV.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          </div>
+        </div>
+      </section>
+
+      <section id="tickertape5" class="tickertape"></section>
+
+      <section id="godbless" class="">
+        <div id="topimages" class="rowscontainer">
+          <div><img class="gb1" src="images/11godbless/godbless-polaroid1.jpg"></div>
+          <div><img class="gb2" src="images/11godbless/godbless-polaroid2.jpg"></div>
+        </div>
+        <div id="mainlyrics"><img src="images/11godbless/godbless-lyrics1.png"></div>
+        <div id="sublyrics" class="rowscontainer">
+          <div><img src="images/11godbless/godbless-lyrics2.png"></div>
+          <div><img class="gblyrics3" src="images/11godbless/godbless-lyrics3.png"></div>
+        </div>
+      </section>
+
+      <section id="sodisrespectful" class="">
+        <div id="camerastuff">
+          <img src="images/12sodisrespectful/sodisrespectful-title.png">
+          <img src="images/8you/you-camera.png" />
+          <div id="slideshowholder">
+            <div id="slideshow">
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0000_IMG_3559.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0001_IMG_3541.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0002_IMG_3431.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0003_IMG_3409.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0004_IMG_3269.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0007_IMG_3244.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0009_IMG_3174.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0010_IMG_3091.jpg" />
+              <img src="images/12sodisrespectful/bts/sodisrespectful-bts-_0011_IMG_3070.jpg" />
+            </div>
+          </div>
+        </div>
+        <div id="bgstuff">
+           <img src="images/12sodisrespectful/sodisrespectful-film.png" />
+           <img src="images/12sodisrespectful/sodisrespectful-sticker.png" />
+           <img src="images/12sodisrespectful/sodisrespectful-lyrics.png" />
+        </div>
+      </section>
+
+      <section id="musicvideos" class="">
+        <div id="video1" class="rowscontainer">
+           <img src="images/13musicvideos/justrelax-polaroid1.png" />
+          <a href="https://www.youtube.com/watch?v=89d0Jt1LAIA&ab_channel=LolaBrookeVEVO" target="_blank"><img src="images/13musicvideos/justrelax-polaroid2.png" /></a>
+          <img src="images/13musicvideos/justrelax-tv.png" />
+          <video muted autoplay loop poster="images/previewvideos/JustRelax_MV.jpg">
+            <source src="images/previewvideos/JustRelax_MV.m4v" type="video/x-m4v">
+            <source src="images/previewvideos/JustRelax_MV.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div id="video2">
+            <a href="https://www.youtube.com/watch?v=rWmzEixggyA&ab_channel=LolaBrookeVEVO" target="_blank"><img src="images/13musicvideos/hereicome-tv.png" /></a>
+            <video muted autoplay loop poster="images/previewvideos/HereICome_MV.jpg">
+              <source src="images/previewvideos/HereICome_MV.m4v" type="video/x-m4v">
+              <source src="images/previewvideos/HereICome_MV.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          <div id="bluebgstuff">
+            <a href="https://www.youtube.com/watch?v=rWmzEixggyA&ab_channel=LolaBrookeVEVO" target="_blank"><img src="images/13musicvideos/hereicome-title.png" /></a>
+            <img src="images/13musicvideos/hereicome-film.png" />
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="legal-policy sme-privacy-exclude"><a href="https://www.sonymusic.com/feedback/index.html" target="_blank" class="sme-privacy-exclude" title="Send Us Feedback" alt="Send Us Feedback">Send Us Feedback</a> | <a href="https://www.sonymusic.com/privacypolicy.html" target="_blank" class="sme-privacy-exclude" title="Privacy Policy/Your Privacy Rights" alt="Privacy Policy">Privacy Policy</a> | <a href="https://www.sonymusic.com/ccpa-contact-form/" target="_blank" class="sme-privacy-exclude" title="Do Not Sell My Personal Information" alt="Do Not Sell My Personal Information">Do Not Sell My Personal Information</a> <span class="desktop sme-privacy-exclude"></span><span class="mobile sme-privacy-exclude"> | </span> <a href="https://www.sonymusic.com/privacy-policy/#your-california-privacy-rights" target="_blank" class="sme-privacy-exclude" title="Your California Privacy Rights" alt="Your California Privacy Rights">Your California Privacy Rights</a> | <a href="https://www.sonymusic.com/privacy/termsandconditions.html" target="_blank" class="sme-privacy-exclude" title="Terms and Conditions" alt="Terms and Conditions">Terms &amp; Conditions</a> ©<a href="https://sonymusic.com" target="_blank" class="sme-privacy-exclude" title="www.SonyMusic.com" alt="www.SonyMusic.com"><script>document.write((new Date()).getFullYear());</script> Sony Music Entertainment</a>. All Rights Reserved.</div>
+      </footer>
+    </div>
+    <div class="parallax">
+      <div class="parallaxbg"></div>
+    </div>
+
+    <script id="forslickjquery" src="js/jquery-3.7.1.slim.min.js"></script>
+    <script id="gsapjs" src="js/gsap.min.js"></script>
+    <script id="scrolljs" src="js/ScrollTrigger.min.js"></script>
+    <script id="smooth" src="js/lenis.min.js"></script>
+    <script id="slick" src="js/slick.min.js"></script>
+    <script id="fulljs" src="js/script.js"></script>
 
   </body>
 </html>

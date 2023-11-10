@@ -1,17 +1,48 @@
 const STARTHERE = 'middle 80%';
 const ENDHERE = 'botom 20%';
 
-$('#slideshow').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  dots: false,
-  arrows: false,
-  infinite: true,
-  fade: true,
-  cssEase: 'linear'
+
+jQuery(document).ready(function ($) {
+  $("#lola-brooke-newsletter-signup-us-arista").on("submit", function (e) {
+    // Prevent default browser actions on form submission.
+    e.preventDefault();
+    // Get all the form user submitted data and get it ready to be sent.
+    var data = $(this).serialize();
+    // POST all the data to the SMF submission endpoint URL.
+    $.ajax({
+      type: "POST",
+      url: "https://subs.sonymusicfans.com/submit",
+      dataType: "json",
+      data: data,
+      xhrFields: {
+        withCredentials: false
+      },
+      success: function (data) {
+        // Do things on successful submission.
+        $('#newsletter-modal #thankyou').removeClass('close-this');
+        $('#newsletter-modal form').addClass('close-this');
+      },
+      error: function (err) {
+        // Do things when submission has an error.
+        alert("An error has occured!");
+      }
+    });
+  });
+
+  $('#slideshow').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: false,
+    arrows: false,
+    infinite: true,
+    fade: true,
+    cssEase: 'linear'
+  });
+
 });
+
 
 $(window).scroll(function(){
   var w = $(window).scrollTop();
@@ -20,6 +51,28 @@ $(window).scroll(function(){
   $('.parallaxbg').css({
     top : e
   });   
+})
+
+// window.addEventListener('beforeunload', (event) => {
+//   event.preventDefault();
+//   event.returnValue = '';
+//   document.querySelector('#newsletter-modal').classList.remove('close-this');
+//   document.querySelector('body').classList.add('modal-is-showing');
+// });
+
+document.querySelector('#newslettermodalopen').addEventListener('click',(event) => {
+    event.preventDefault();
+    document.querySelector('#newsletter-modal').classList.remove('close-this');
+    document.querySelector('body').classList.add('modal-is-showing');
+})
+
+document.querySelector('#closemodal').addEventListener('click',(event) => {
+  event.preventDefault();
+  document.querySelector('#newsletter-modal').classList.add('close-this');
+  document.querySelector('body').classList.remove('modal-is-showing');
+  document.querySelector('form #field_email_address').value = '';
+  document.querySelector('#newsletter-modal #thankyou').classList.add('close-this');
+  document.querySelector('#newsletter-modal form').classList.remove('close-this');
 })
 
 // window.onload = (event) => {

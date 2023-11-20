@@ -453,13 +453,13 @@ button {
 }
 
 #iamlola #lolasinglepolaroidholder {
-  padding-top: 13%;
+  padding-top: 5%;
   position: relative;
   text-align: center;
 }
 @media (max-width: 768px) {
   #iamlola #lolasinglepolaroidholder {
-    padding-top: 68%;
+    padding-top: 30%;
   }
 }
 #iamlola #lolasinglepolaroidholder img:first-of-type {
@@ -662,9 +662,12 @@ button {
 
 #dgms {
   padding-top: 7%;
-  display: flex;
 }
-#dgms img:first-of-type {
+#dgms #dgmstop {
+  display: flex;
+  position: relative;
+}
+#dgms #dgmstop img:first-of-type {
   position: absolute;
   width: 25%;
   z-index: 20;
@@ -672,12 +675,12 @@ button {
   top: 16%;
 }
 @media (max-width: 768px) {
-  #dgms img:first-of-type {
+  #dgms #dgmstop img:first-of-type {
     width: 29%;
     right: 1%;
   }
 }
-#dgms img:nth-of-type(2) {
+#dgms #dgmstop img:nth-of-type(2) {
   position: absolute;
   width: 25%;
   margin-right: 25%;
@@ -689,17 +692,89 @@ button {
   transform: scale(1.3);
 }
 @media (max-width: 768px) {
-  #dgms img:nth-of-type(2) {
+  #dgms #dgmstop img:nth-of-type(2) {
     width: 35%;
     margin-right: 15%;
   }
 }
-#dgms img:nth-of-type(3) {
+#dgms #dgmstop img:nth-of-type(3) {
   position: relative;
   width: 90%;
   margin-left: 0;
   z-index: 0;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+}
+#dgms #dgmsvideoarea #tvplayer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+}
+#dgms #dgmsvideoarea #tvplayer #playme {
+  position: absolute;
+  z-index: 20;
+  width: 19%;
+  top: 79%;
+  right: 1%;
+}
+@media (max-width: 768px) {
+  #dgms #dgmsvideoarea #tvplayer #playme {
+    width: 19%;
+    top: 78%;
+    right: 3%;
+  }
+}
+#dgms #dgmsvideoarea #tvplayer #redtv {
+  margin-top: 7%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  #dgms #dgmsvideoarea #tvplayer #redtv {
+    width: 95%;
+    margin-top: 9%;
+  }
+}
+#dgms #dgmsvideoarea #tvplayer video {
+  position: absolute;
+  z-index: 0;
+  margin-top: 16%;
+  left: 5%;
+  width: 75%;
+}
+@media (max-width: 768px) {
+  #dgms #dgmsvideoarea #tvplayer video {
+    left: 7%;
+    width: 74%;
+    margin-top: 18%;
+  }
+}
+#dgms #dgmsbg {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+#dgms #dgmsbg img:first-of-type {
+  position: relative;
+  z-index: 5;
+  margin-top: -10%;
+  transform: rotate(9deg);
+  width: 40%;
+  float: right;
+  margin-right: -3%;
+}
+#dgms #dgmsbg img:last-of-type {
+  position: absolute;
+  z-index: 0;
+  transform: rotate(4deg);
+  width: 80%;
+  margin-right: 26%;
+}
+@media (max-width: 768px) {
+  #dgms #dgmsbg img:last-of-type {
+    margin-right: 22%;
+  }
 }
 
 #pitstop {
@@ -800,7 +875,6 @@ button {
 }
 @media (max-width: 768px) {
   #pitstop #tvplayer #redtv {
-    margin-top: 48%;
     width: 77%;
     margin-top: 55%;
   }
@@ -1722,9 +1796,105 @@ button {
     right: 1%;
   }
 }
+#sodisrespectful #sodisrespectfulbottom {
+  position: relative;
+  margin-top: 30%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom {
+    margin-top: 20%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #sodisrespectfultv {
+  width: 90%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #sodisrespectfultv {
+    width: 100%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #sodisrespectfultv img:first-of-type {
+  position: absolute;
+  width: 15%;
+  right: 25%;
+  z-index: 20;
+  top: 90%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #sodisrespectfultv img:first-of-type {
+    top: 100%;
+    right: 14%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #sodisrespectfultv img:last-of-type {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #sodisrespectfultv img:last-of-type {
+    width: 113%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #sodisrespectfultv video {
+  position: absolute;
+  z-index: 0;
+  width: 52%;
+  top: 9%;
+  left: 5%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #sodisrespectfultv video {
+    width: 59%;
+    top: 10%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #btsimagesside {
+  width: 28%;
+}
+#sodisrespectful #sodisrespectfulbottom #btsimagesside img {
+  width: 90%;
+}
+#sodisrespectful #sodisrespectfulbottom #btsimagesside img:first-of-type {
+  transform: rotate(13deg);
+  margin-top: -15%;
+  margin-left: -22%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #btsimagesside img:first-of-type {
+    margin-left: 20%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #btsimagesside img:nth-of-type(2) {
+  transform: rotate(-17deg);
+  margin-top: -20%;
+  margin-left: -25%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #btsimagesside img:nth-of-type(2) {
+    margin-left: 20%;
+    margin-top: -15%;
+  }
+}
+#sodisrespectful #sodisrespectfulbottom #btsimagesside img:last-of-type {
+  transform: rotate(8deg);
+  margin-top: -34%;
+  margin-left: -13%;
+}
+@media (max-width: 768px) {
+  #sodisrespectful #sodisrespectfulbottom #btsimagesside img:last-of-type {
+    margin-left: 20%;
+    margin-top: -7%;
+  }
+}
 
 #musicvideos {
-  margin-top: 30%;
+  margin-top: 10%;
+}
+@media (max-width: 768px) {
+  #musicvideos {
+    margin-top: 25%;
+  }
 }
 #musicvideos #video1 img:first-of-type {
   margin-left: 5%;

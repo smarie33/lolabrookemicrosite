@@ -327,6 +327,16 @@ if(window.innerWidth <= 768){
     },
     scale: 1.5
   })
+
+  gsap.to('#playme',{
+    scrollTrigger: {
+      trigger: '#playme',
+      start: STARTHERE,
+      end: ENDHERE,
+      scrub: true
+    },
+    scale: 1.5
+  })
 }
 
 gsap.to('.burstred',{
@@ -548,6 +558,18 @@ gsap.to('.gblyrics3',{
   },
   rotation: -9
 })
+
+if(window.innerWidth <= 768){
+  gsap.to('#disrespectplaybtn',{
+    scrollTrigger: {
+      trigger: '#disrespectplaybtn',
+      start: STARTHERE,
+      end: ENDHERE,
+      scrub: true
+    },
+    scale: 2
+  })
+}
 
 
 
